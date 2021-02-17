@@ -1,5 +1,5 @@
 {
-  "name": "@<organization-hyphen>/<name-hyphen>",
+  "name": "@ngworker/lumberjack-applicationinsights-driver",
   "version": "0.0.0",
   "peerDependencies": {
     "@angular/core": ">=9.0.7",
@@ -12,7 +12,7 @@
     "angular",
     "angular 2",
     "lumberjack",
-    "<name-hyphen>",
+    "lumberjack-applicationinsights-driver",
     "logging"
   ],
   "author": {
@@ -25,11 +25,11 @@
     "access": "public"
   },
   "bugs": {
-    "url": "https://github.com/<organization-hyphen>/<name-hyphen>/issue"
+    "url": "https://github.com/ngworker/lumberjack-applicationinsights-driver/issue"
   },
-  "homepage": "https://github.com/<organization-hyphen>/<name-hyphen>#readme",
+  "homepage": "https://github.com/ngworker/lumberjack-applicationinsights-driver#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/<organization-hyphen>/<name-hyphen>"
+    "url": "https://github.com/ngworker/lumberjack-applicationinsights-driver"
   }
 }

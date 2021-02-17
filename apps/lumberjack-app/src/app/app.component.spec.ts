@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LumberjackLevel, LumberjackModule } from '@ngworker/lumberjack';
 
-import { <name-capitalize-united>Module } from '@<organization-hyphen>/<name-hyphen>';
+import { LumberjackLevel, LumberjackModule } from '@ngworker/lumberjack';
+import { LumberjackApplicationinsightsDriverModule } from '@ngworker/lumberjack-applicationinsights-driver';
 
 import { AppComponent } from './app.component';
 
@@ -11,19 +11,19 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-      imports:[
+      declarations: [AppComponent],
+      imports: [
         LumberjackModule.forRoot(),
-        <name-capitalize-united>Module.forRoot({ levels: [LumberjackLevel.Verbose], someNeededOption: 'option-value' }),
-      ]
+        LumberjackApplicationinsightsDriverModule.forRoot({
+          levels: [LumberjackLevel.Verbose],
+          someNeededOption: 'option-value',
+        }),
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
     app = fixture.componentInstance;
   });
-
 
   it('should create the app', () => {
     expect(app).toBeTruthy();
@@ -39,5 +39,3 @@ describe('AppComponent', () => {
     expect(query && query.textContent).toContain('lumberjack app is running!');
   });
 });
-
-

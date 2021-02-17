@@ -1,11 +1,11 @@
 import { isClass } from '@internal/test-util';
 
-import { <name-capitalize-united> } from './index';
+import { LumberjackApplicationinsightsDriver } from './index';
 
 describe('Log drivers API', () => {
   describe('Services', () => {
-    it(`exposes ${<name-capitalize-united>.name}`, () => {
-      const sut = <name-capitalize-united>;
+    it(`exposes ${LumberjackApplicationinsightsDriver.name}`, () => {
+      const sut = LumberjackApplicationinsightsDriver;
 
       expect(isClass(sut)).withContext(`${sut.name} is not a class`).toBeTrue();
     });

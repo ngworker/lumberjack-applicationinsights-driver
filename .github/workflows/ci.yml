@@ -74,8 +74,8 @@ jobs:
       - run: yarn build:lib
       - uses: actions/upload-artifact@v2
         with:
-          name: <name-hyphen>-package
-          path: dist/<organization-hyphen>/<name-hyphen>
+          name: lumberjack-applicationinsights-driver-package
+          path: dist/ngworker/lumberjack-applicationinsights-driver
           if-no-files-found: error
 
   lib:
@@ -142,11 +142,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-${{ matrix.node-version }}-angular-${{ matrix.angular-version }}-yarn-
       - run: yarn install
-      - run: yarn delete-path-alias @<organization-hyphen>/<name-hyphen>
+      - run: yarn delete-path-alias @ngworker/lumberjack-applicationinsights-driver
       - uses: actions/download-artifact@v2
         with:
-          name: <name-hyphen>-package
-          path: node_modules/@<organization-hyphen>/<name-hyphen>
+          name: lumberjack-applicationinsights-driver-package
+          path: node_modules/@ngworker/lumberjack-applicationinsights-driver
       - run: npx ngcc || true
 
       - run: yarn test:ci
@@ -183,11 +183,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-${{ matrix.node-version }}-angular-${{ matrix.angular-version }}-yarn-
       - run: yarn install
-      - run: yarn delete-path-alias @<organization-hyphen>/<name-hyphen>
+      - run: yarn delete-path-alias @ngworker/lumberjack-applicationinsights-driver
       - uses: actions/download-artifact@v2
         with:
-          name: <name-hyphen>-package
-          path: node_modules/@<organization-hyphen>/<name-hyphen>
+          name: lumberjack-applicationinsights-driver-package
+          path: node_modules/@ngworker/lumberjack-applicationinsights-driver
       - run: npx ngcc || true
 
       - name: Update Chrome
