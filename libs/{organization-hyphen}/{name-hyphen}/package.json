@@ -1,0 +1,35 @@
+{
+  "name": "@<organization-hyphen>/<name-hyphen>",
+  "version": "0.0.0",
+  "peerDependencies": {
+    "@angular/core": ">=9.0.7",
+    "@ngworker/lumberjack": "^2.0.0 || >=2.0.0-rc.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "keywords": [
+    "angular",
+    "angular 2",
+    "lumberjack",
+    "<name-hyphen>",
+    "logging"
+  ],
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/<organization-hyphen>/<name-hyphen>/issue"
+  },
+  "homepage": "https://github.com/<organization-hyphen>/<name-hyphen>#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<organization-hyphen>/<name-hyphen>"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "temp",
+  "dependencies": {
+    "inquirer": "7.3.3",
+    "rimraf": "3.0.2"
+  },
+  "scripts": {
+    "init": "node init"
+  }
+}
