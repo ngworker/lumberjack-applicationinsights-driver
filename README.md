@@ -16,9 +16,7 @@
 [![ngworker](https://img.shields.io/badge/ngworker-%40-red)](https://github.com/ngworker/)
 [![Wallaby.js](https://img.shields.io/badge/wallaby.js-powered-blue.svg?style=flat&logo=github)](https://wallabyjs.com/oss/)
 
-TODO: Modify the description of this driver
-
-Lumberjack Applicationinsights Driver is a custom log driver for [ngworker/lumberjack](https://github.com/ngworker/lumberjack). It is used to send logs over SOME protocol.
+Lumberjack Applicationinsights Driver is a custom log driver for [ngworker/lumberjack](https://github.com/ngworker/lumberjack). It is used to send logs over [Azure Application Insights](https://azure.microsoft.com/en-us/) protocol.
 
 ## Features
 
