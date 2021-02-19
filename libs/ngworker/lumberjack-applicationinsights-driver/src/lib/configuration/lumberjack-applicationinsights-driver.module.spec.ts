@@ -20,7 +20,8 @@ function createLumberjackApplicationinsightsDriverOptions(
   extraOptions: { levels?: LumberjackConfigLevels; identifier?: string } = {}
 ): LumberjackApplicationinsightsDriverOptions {
   return {
-    someNeededOption: 'some-options',
+    instrumentationKey: 'dummy-key',
+    loggingLevelConsole: 3,
     ...extraOptions,
   };
 }
@@ -31,7 +32,8 @@ function createLumberjackApplicationinsightsDriverConfig(
 ): LumberjackApplicationinsightsDriverConfig {
   const config = {
     levels,
-    someNeededOption: 'some-options',
+    instrumentationKey: 'dummy-key',
+    loggingLevelConsole: 3,
     identifier,
   };
 
