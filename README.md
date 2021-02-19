@@ -1,33 +1,3 @@
-# AUTHORS SECTION
-
-This section is meant to help log driver authors get started with this template.
-
-> TODO: Remove this section when the repository is completely set up.
-
-## Terraform the repository
-
-To customize the repo and enable some pre-configure tools run the `init` script in the terminal at your root directory.
-
-The `init` script will ask for the required information.
-
-### Running the init script.
-
-```bash
-npm run init
-# Or if you use yarn
-yarn run init
-```
-
-## Replace TODOS
-
-Search across the repository files and solve the TODO comments.
-
-### Files with TODOS
-
-- README.md (here)
-
-> End of AUTHORS SECTION. Delete everything above
-
 # @ngworker/lumberjack-applicationinsights-driver
 
 <p align="center">
@@ -71,8 +41,8 @@ TODO: Update the features of this driver
 
 LumberjackApplicationinsightsDriver is published as the `@ngworker/lumberjack-applicationinsights-driver` package.
 
-| Toolchain   | Command                                            |
-| ----------- | -------------------------------------------------- |
+| Toolchain   | Command                                                       |
+| ----------- | ------------------------------------------------------------- |
 | Angular CLI | `ng add @ngworker/lumberjack-applicationinsights-driver`      |
 | NPM CLI     | `npm install @ngworker/lumberjack-applicationinsights-driver` |
 | Yarn CLI    | `yarn add @ngworker/lumberjack-applicationinsights-driver`    |
@@ -82,10 +52,10 @@ LumberjackApplicationinsightsDriver is published as the `@ngworker/lumberjack-ap
 `LumberjackApplicationinsightsDriver` has verified compatibility with the following packages versions.
 
 | LumberjackApplicationinsightsDriver | Lumberjack     | Another Package |
-| ------------------------ | -------------- | --------------- |
-| 2.0.x                    | ^2.0.0         | ^8.0.0          |
-| 1.2.x                    | >=2.0.0-rc.0   | ^7.4.1          |
-| 1.1.x                    | >=2.0.0-beta.3 | ^7.0.0          |
+| ----------------------------------- | -------------- | --------------- |
+| 2.0.x                               | ^2.0.0         | ^8.0.0          |
+| 1.2.x                               | >=2.0.0-rc.0   | ^7.4.1          |
+| 1.1.x                               | >=2.0.0-beta.3 | ^7.0.0          |
 
 If the version you are using is not listed, please [raise an issue in our GitHub repository](https://github.com/ngworker/lumberjack-applicationinsights-driver/issues/new).
 

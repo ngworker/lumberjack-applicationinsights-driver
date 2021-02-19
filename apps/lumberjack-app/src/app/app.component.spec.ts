@@ -16,7 +16,6 @@ describe('AppComponent', () => {
         LumberjackModule.forRoot(),
         LumberjackApplicationinsightsDriverModule.forRoot({
           levels: [LumberjackLevel.Verbose],
-          someNeededOption: 'option-value',
         }),
       ],
     }).compileComponents();
@@ -27,15 +26,5 @@ describe('AppComponent', () => {
 
   it('should create the app', () => {
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'lumberjack'`, () => {
-    expect(app.title).toEqual('lumberjack');
-  });
-
-  it('should render title', () => {
-    fixture.detectChanges();
-    const query = fixture.nativeElement.querySelector('.content span');
-    expect(query && query.textContent).toContain('lumberjack app is running!');
   });
 });

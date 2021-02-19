@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LumberjackLevel, LumberjackModule } from '@ngworker/lumberjack';
 import { LumberjackApplicationinsightsDriverModule } from '@ngworker/lumberjack-applicationinsights-driver';
 
+import { environment } from '../environments/environment';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -13,7 +15,8 @@ import { AppComponent } from './app.component';
     LumberjackModule.forRoot(),
     LumberjackApplicationinsightsDriverModule.forRoot({
       levels: [LumberjackLevel.Verbose],
-      someNeededOption: 'option-value',
+      instrumentationKey: environment.appInsights.instrumentationKey,
+      loggingLevelConsole: 3,
     }),
   ],
   providers: [],

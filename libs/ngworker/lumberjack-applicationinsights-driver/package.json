@@ -1,6 +1,6 @@
 {
   "name": "@ngworker/lumberjack-applicationinsights-driver",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "peerDependencies": {
     "@angular/core": ">=9.0.7",
     "@ngworker/lumberjack": "^2.0.0 || >=2.0.0-rc.0"
@@ -16,9 +16,9 @@
     "logging"
   ],
   "author": {
-    "name": "",
-    "email": "",
-    "url": ""
+    "name": "Arthur Groupp",
+    "email": "arth.groupp@gmail.com",
+    "url": "https://groupp.org"
   },
   "license": "MIT",
   "publishConfig": {

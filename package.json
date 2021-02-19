@@ -1,6 +1,6 @@
 {
   "name": "@ngworker/lumberjack-applicationinsights-driver",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve lumberjack-app",
@@ -34,6 +34,7 @@
     "@angular/platform-browser": "~11.1.0",
     "@angular/platform-browser-dynamic": "~11.1.0",
     "@angular/router": "~11.1.0",
+    "@microsoft/applicationinsights-web": "^2.5.11",
     "@ngworker/lumberjack": "^2.0.0 || >=2.0.0-rc.0",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.3",
