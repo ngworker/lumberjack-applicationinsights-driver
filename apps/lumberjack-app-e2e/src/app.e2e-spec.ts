@@ -11,7 +11,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', async () => {
     await page.navigateTo();
-    await expect(await page.getTitleText()).toEqual('lumberjack app is running!');
+    await expect(await page.getTitleText()).toEqual('Lumberjack Application Insights Demo');
   });
 
   afterEach(async () => {
