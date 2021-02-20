@@ -6,7 +6,7 @@
 export const environment = {
   production: false,
   appInsights: {
-    instrumentationKey: '6948078b-b192-489b-961c-6a490733b988',
+    instrumentationKey: '<your-instrumentation-key>',
   },
 };
 
