@@ -16,6 +16,7 @@ describe('AppComponent', () => {
         LumberjackModule.forRoot(),
         LumberjackApplicationinsightsDriverModule.forRoot({
           levels: [LumberjackLevel.Verbose],
+          instrumentationKey: 'dummy-key',
         }),
       ],
     }).compileComponents();

@@ -1,4 +1,5 @@
 import { Inject, NgModule, Optional, SkipSelf } from '@angular/core';
+import { ApplicationInsights } from '@microsoft/applicationinsights-web';
 
 import {
   LumberjackLogDriverConfig,
@@ -19,8 +20,15 @@ export function lumberjackApplicationinsightsDriverFactory(
     ...{ ...logDriverConfig, identifier: LumberjackApplicationinsightsDriver.driverIdentifier },
     ...lumberjackApplicationinsightsDriverConfig,
   };
+  const appInsights = new ApplicationInsights({
+    config: {
+      instrumentationKey: lumberjackApplicationinsightsDriverConfig.instrumentationKey,
+      connectionString: lumberjackApplicationinsightsDriverConfig.connectionString,
+      loggingLevelConsole: lumberjackApplicationinsightsDriverConfig.loggingLevelConsole,
+    },
+  });
 
-  return new LumberjackApplicationinsightsDriver(config);
+  return new LumberjackApplicationinsightsDriver(config, appInsights);
 }
 
 @NgModule({

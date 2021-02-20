@@ -11,17 +11,10 @@ export class LumberjackApplicationinsightsDriver<TPayload extends LumberjackLogP
   implements LumberjackLogDriver<TPayload> {
   static driverIdentifier = 'LumberjackApplicationinsightsDriver';
 
-  private readonly appInsights: ApplicationInsights = new ApplicationInsights({
-    config: {
-      instrumentationKey: this.config.instrumentationKey,
-      connectionString: this.config.connectionString,
-      loggingLevelConsole: this.config.loggingLevelConsole,
-    },
-  });
-
   constructor(
     @Inject(lumberjackApplicationinsightsDriverConfigToken)
-    public config: LumberjackApplicationinsightsDriverInternalConfig
+    public config: LumberjackApplicationinsightsDriverInternalConfig,
+    private readonly appInsights: ApplicationInsights
   ) {
     this.appInsights.loadAppInsights();
   }

@@ -1,11 +1,12 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+// '<your-instrumentation-key>'
 
 export const environment = {
   production: false,
   appInsights: {
-    instrumentationKey: '<your-instrumentation-key>',
+    instrumentationKey: '6948078b-b192-489b-961c-6a490733b988',
   },
 };
 
