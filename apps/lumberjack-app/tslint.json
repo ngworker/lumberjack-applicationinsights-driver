@@ -1,8 +1,8 @@
 {
   "extends": "../../tslint.json",
   "rules": {
-    "directive-selector": [true, "attribute", "<organization-hyphen>", "camelCase"],
-    "component-selector": [true, "element", "<organization-hyphen>", "kebab-case"]
+    "directive-selector": [true, "attribute", "ngworker", "camelCase"],
+    "component-selector": [true, "element", "ngworker", "kebab-case"]
   },
   "linterOptions": {
     "exclude": ["!**/*"]

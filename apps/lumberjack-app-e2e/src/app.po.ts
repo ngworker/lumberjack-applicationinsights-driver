@@ -6,6 +6,6 @@ export class AppPage {
   }
 
   getTitleText(): Promise<string> {
-    return element(by.css('<organization-hyphen>-root .content span')).getText() as Promise<string>;
+    return element(by.css('h1')).getText() as Promise<string>;
   }
 }

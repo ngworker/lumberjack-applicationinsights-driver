@@ -1,34 +1,4 @@
-# AUTHORS SECTION
-
-This section is meant to help log driver authors get started with this template.
-
-> TODO: Remove this section when the repository is completely set up.
-
-## Terraform the repository
-
-To customize the repo and enable some pre-configure tools run the `init` script in the terminal at your root directory.
-
-The `init` script will ask for the required information.
-
-### Running the init script.
-
-```bash
-npm run init
-# Or if you use yarn
-yarn run init
-```
-
-## Replace TODOS
-
-Search across the repository files and solve the TODO comments.
-
-### Files with TODOS
-
-- README.md (here)
-
-> End of AUTHORS SECTION. Delete everything above
-
-# @<organization-hyphen>/<name-hyphen>
+# @ngworker/lumberjack-applicationinsights-driver
 
 <p align="center">
  <img width="40%" height="40%" src="./logo.svg">
@@ -43,20 +13,18 @@ Search across the repository files and solve the TODO comments.
 [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-[![<organization-hyphen>](https://img.shields.io/badge/<organization-hyphen>-%40-red)](https://github.com/<organization-hyphen>/)
+[![ngworker](https://img.shields.io/badge/ngworker-%40-red)](https://github.com/ngworker/)
 [![Wallaby.js](https://img.shields.io/badge/wallaby.js-powered-blue.svg?style=flat&logo=github)](https://wallabyjs.com/oss/)
 
-TODO: Modify the description of this driver
-
-<name-capitalize> is a custom log driver for [ngworker/lumberjack](https://github.com/ngworker/lumberjack). It is used to send logs over SOME protocol.
+Lumberjack Applicationinsights Driver is a custom log driver for [ngworker/lumberjack](https://github.com/ngworker/lumberjack). It is used to send logs over [Azure Application Insights](https://azure.microsoft.com/en-us/) protocol.
 
 ## Features
 
 TODO: Update the features of this driver
 
-- ✅ Logs to custom log store
+- ✅ Logs to Azure Application Insights log store
 - ✅ Unit test coverage
-- ✅ Custom Logger
+- ✅ Prints your DEBUG, WARNING and CRITICAL logs to console
 - ✅ Follows Lumberjack Best Practices guide
 
 ## Table of Contents
@@ -69,45 +37,45 @@ TODO: Update the features of this driver
 
 ## Installation
 
-<name-capitalize-united> is published as the `@<organization-hyphen>/<name-hyphen>` package.
+LumberjackApplicationinsightsDriver is published as the `@ngworker/lumberjack-applicationinsights-driver` package.
 
-| Toolchain   | Command                                            |
-| ----------- | -------------------------------------------------- |
-| Angular CLI | `ng add @<organization-hyphen>/<name-hyphen>`      |
-| NPM CLI     | `npm install @<organization-hyphen>/<name-hyphen>` |
-| Yarn CLI    | `yarn add @<organization-hyphen>/<name-hyphen>`    |
+| Toolchain   | Command                                                       |
+| ----------- | ------------------------------------------------------------- |
+| Angular CLI | `ng add @ngworker/lumberjack-applicationinsights-driver`      |
+| NPM CLI     | `npm install @ngworker/lumberjack-applicationinsights-driver` |
+| Yarn CLI    | `yarn add @ngworker/lumberjack-applicationinsights-driver`    |
 
 ## Compatibility
 
-`<name-capitalize-united>` has verified compatibility with the following packages versions.
+`LumberjackApplicationinsightsDriver` has verified compatibility with the following packages versions.
 
-| <name-capitalize-united> | Lumberjack     | Another Package |
-| ------------------------ | -------------- | --------------- |
-| 2.0.x                    | ^2.0.0         | ^8.0.0          |
-| 1.2.x                    | >=2.0.0-rc.0   | ^7.4.1          |
-| 1.1.x                    | >=2.0.0-beta.3 | ^7.0.0          |
+| LumberjackApplicationinsightsDriver | Lumberjack     | @microsoft/applicationinsights-web |
+| ----------------------------------- | -------------- | ---------------------------------- |
+| 1.0.x                               | ^2.0.0         | ^2.5.11                            |
 
-If the version you are using is not listed, please [raise an issue in our GitHub repository](https://github.com/<organization-hyphen>/<name-hyphen>/issues/new).
+
+If the version you are using is not listed, please [raise an issue in our GitHub repository](https://github.com/ngworker/lumberjack-applicationinsights-driver/issues/new).
 
 ## Usage
 
 TODO: Verify that these configurations match your driver configurations.
 
-To start using <name-capitalize-united>, import it in your root or core Angular module along with Lumberjack.
+To start using LumberjackApplicationinsightsDriver, import it in your root or core Angular module along with Lumberjack.
 
 ```ts
 import { NgModule } from '@angular/core';
 import { LumberjackLevel, LumberjackModule } from '@ngworker/lumberjack';
-import { <name-capitalize-united> } from '@<organization-hyphen>/<name-hyphen>';
+import { LumberjackApplicationinsightsDriver } from '@ngworker/lumberjack-applicationinsights-driver';
 
 @NgModule({
   imports: [
     LumberjackModule.forRoot({
       levels: [LumberjackLevel.Verbose],
     }),
-    <name-capitalize-united>.forRoot({
+    LumberjackApplicationinsightsDriver.forRoot({
       levels: [LumberjackLevel.Critical, LumberjackLevel.Error],
-      // Options
+      instrumentationKey: environment.appInsights.instrumentationKey,
+      loggingLevelConsole: 3,
     }),
     // (...)
   ],
@@ -116,11 +84,19 @@ import { <name-capitalize-united> } from '@<organization-hyphen>/<name-hyphen>';
 export class AppModule {}
 ```
 
-Now you can start using the `LumberjackService` or extend `LumberjackLogger` and they will automatically use the `<name-capitalize-united>`.
+Now you can start using the `LumberjackService` or extend `LumberjackLogger` and they will automatically use the `LumberjackApplicationinsightsDriver`.
 
 ## Configuration
 
 TODO: Here it is explained how this custom driver can be configured.
+To use the Application Insights you must provide or `instrumentationKey`, or `connectionString` in the configuration object provided in `forRoot`. Additionally you can specify `loggingLevelConsole`.
+
+| Setting              | Description
+|----------------------|----------------
+| `instrumentationKey`  | Instrumentation key of resource. Either this or connectionString must be specified.
+| `connectionString`    | Connection string of resource. Either this or instrumentationKey must be specified.
+| `loggingLevelConsole` | Console logging level. All logs with a severity level higher than the configured level will be printed to console. Otherwise they are suppressed. Level 3 will print DEBUG, WARNING and CRITICAL logs to console, level 2 will print both CRITICAL and WARNING logs to console, level 1 prints only CRITICAL.
+
 
 ## Wallaby.js
 

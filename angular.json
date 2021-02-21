@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "libs",
   "projects": {
@@ -122,30 +125,30 @@
         }
       }
     },
-    "<organization-hyphen>-<name-hyphen>": {
+    "ngworker-lumberjack-applicationinsights-driver": {
       "projectType": "library",
-      "root": "libs/<organization-hyphen>/<name-hyphen>",
-      "sourceRoot": "libs/<organization-hyphen>/<name-hyphen>/src",
+      "root": "libs/ngworker/lumberjack-applicationinsights-driver",
+      "sourceRoot": "libs/ngworker/lumberjack-applicationinsights-driver/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "libs/<organization-hyphen>/<name-hyphen>/tsconfig.lib.json",
-            "project": "libs/<organization-hyphen>/<name-hyphen>/ng-package.json"
+            "tsConfig": "libs/ngworker/lumberjack-applicationinsights-driver/tsconfig.lib.json",
+            "project": "libs/ngworker/lumberjack-applicationinsights-driver/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/<organization-hyphen>/<name-hyphen>/tsconfig.lib.prod.json"
+              "tsConfig": "libs/ngworker/lumberjack-applicationinsights-driver/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "libs/<organization-hyphen>/<name-hyphen>/src/test.ts",
-            "tsConfig": "libs/<organization-hyphen>/<name-hyphen>/tsconfig.spec.json",
-            "karmaConfig": "libs/<organization-hyphen>/<name-hyphen>/karma.conf.js"
+            "main": "libs/ngworker/lumberjack-applicationinsights-driver/src/test.ts",
+            "tsConfig": "libs/ngworker/lumberjack-applicationinsights-driver/tsconfig.spec.json",
+            "karmaConfig": "libs/ngworker/lumberjack-applicationinsights-driver/karma.conf.js"
           },
           "configurations": {
             "ci": {
@@ -159,10 +162,10 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/<organization-hyphen>/<name-hyphen>/tsconfig.lib.json",
-              "libs/<organization-hyphen>/<name-hyphen>/tsconfig.spec.json"
+              "libs/ngworker/lumberjack-applicationinsights-driver/tsconfig.lib.json",
+              "libs/ngworker/lumberjack-applicationinsights-driver/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/<organization-hyphen>/<name-hyphen>/**"]
+            "exclude": ["**/node_modules/**", "!libs/ngworker/lumberjack-applicationinsights-driver/**"]
           }
         }
       }

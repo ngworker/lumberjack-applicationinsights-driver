@@ -1,6 +1,6 @@
 {
-  "projectName": "<name-hyphen>",
-  "projectOwner": "<organization-hyphen>",
+  "projectName": "lumberjack-applicationinsights-driver",
+  "projectOwner": "ngworker",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
