@@ -14,7 +14,8 @@ export interface LumberjackApplicationinsightsDriverInternalConfig extends Lumbe
   /**
    * Console logging level. All logs with a severity level higher
    * than the configured level will be printed to console. Otherwise
-   * they are suppressed. ie Level 2 will print both CRITICAL and
+   * they are suppressed. Level 3 will print DEBUG, WARNING and CRITICAL logs
+   * to console, level 2 will print both CRITICAL and
    * WARNING logs to console, level 1 prints only CRITICAL.
    *
    * Note: Logs sent as telemetry to instrumentation key will also

@@ -22,9 +22,9 @@ Lumberjack Applicationinsights Driver is a custom log driver for [ngworker/lumbe
 
 TODO: Update the features of this driver
 
-- ✅ Logs to custom log store
+- ✅ Logs to Azure Application Insights log store
 - ✅ Unit test coverage
-- ✅ Custom Logger
+- ✅ Prints your DEBUG, WARNING and CRITICAL logs to console
 - ✅ Follows Lumberjack Best Practices guide
 
 ## Table of Contents
@@ -49,11 +49,10 @@ LumberjackApplicationinsightsDriver is published as the `@ngworker/lumberjack-ap
 
 `LumberjackApplicationinsightsDriver` has verified compatibility with the following packages versions.
 
-| LumberjackApplicationinsightsDriver | Lumberjack     | Another Package |
-| ----------------------------------- | -------------- | --------------- |
-| 2.0.x                               | ^2.0.0         | ^8.0.0          |
-| 1.2.x                               | >=2.0.0-rc.0   | ^7.4.1          |
-| 1.1.x                               | >=2.0.0-beta.3 | ^7.0.0          |
+| LumberjackApplicationinsightsDriver | Lumberjack     | @microsoft/applicationinsights-web |
+| ----------------------------------- | -------------- | ---------------------------------- |
+| 1.0.x                               | ^2.0.0         | ^2.5.11                            |
+
 
 If the version you are using is not listed, please [raise an issue in our GitHub repository](https://github.com/ngworker/lumberjack-applicationinsights-driver/issues/new).
 
@@ -75,7 +74,8 @@ import { LumberjackApplicationinsightsDriver } from '@ngworker/lumberjack-applic
     }),
     LumberjackApplicationinsightsDriver.forRoot({
       levels: [LumberjackLevel.Critical, LumberjackLevel.Error],
-      // Options
+      instrumentationKey: environment.appInsights.instrumentationKey,
+      loggingLevelConsole: 3,
     }),
     // (...)
   ],
@@ -89,6 +89,14 @@ Now you can start using the `LumberjackService` or extend `LumberjackLogger` and
 ## Configuration
 
 TODO: Here it is explained how this custom driver can be configured.
+To use the Application Insights you must provide or `instrumentationKey`, or `connectionString` in the configuration object provided in `forRoot`. Additionally you can specify `loggingLevelConsole`.
+
+| Setting              | Description
+|----------------------|----------------
+| `instrumentationKey`  | Instrumentation key of resource. Either this or connectionString must be specified.
+| `connectionString`    | Connection string of resource. Either this or instrumentationKey must be specified.
+| `loggingLevelConsole` | Console logging level. All logs with a severity level higher than the configured level will be printed to console. Otherwise they are suppressed. Level 3 will print DEBUG, WARNING and CRITICAL logs to console, level 2 will print both CRITICAL and WARNING logs to console, level 1 prints only CRITICAL.
+
 
 ## Wallaby.js
 
