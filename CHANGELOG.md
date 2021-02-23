@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/ngworker/lumberjack-applicationinsights-driver/compare/v1.0.0...v1.0.2) (2021-02-23)
+
+
+### Bug Fixes
+
+* 🐛 readme ([a07d663](https://github.com/ngworker/lumberjack-applicationinsights-driver/commit/a07d663fff422b01cc8376759a423084afd7e253))
+
 ## 1.0.0 (2021-02-23)
 
 
