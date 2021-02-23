@@ -20,8 +20,6 @@ Lumberjack Applicationinsights Driver is a custom log driver for [ngworker/lumbe
 
 ## Features
 
-TODO: Update the features of this driver
-
 - ✅ Logs to Azure Application Insights log store
 - ✅ Unit test coverage
 - ✅ Prints your DEBUG, WARNING and CRITICAL logs to console
@@ -58,8 +56,6 @@ If the version you are using is not listed, please [raise an issue in our GitHub
 
 ## Usage
 
-TODO: Verify that these configurations match your driver configurations.
-
 To start using LumberjackApplicationinsightsDriver, import it in your root or core Angular module along with Lumberjack.
 
 ```ts
@@ -88,7 +84,6 @@ Now you can start using the `LumberjackService` or extend `LumberjackLogger` and
 
 ## Configuration
 
-TODO: Here it is explained how this custom driver can be configured.
 To use the Application Insights you must provide or `instrumentationKey`, or `connectionString` in the configuration object provided in `forRoot`. Additionally you can specify `loggingLevelConsole`.
 
 | Setting              | Description

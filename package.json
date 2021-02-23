@@ -1,6 +1,6 @@
 {
   "name": "@ngworker/lumberjack-applicationinsights-driver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve lumberjack-app",
